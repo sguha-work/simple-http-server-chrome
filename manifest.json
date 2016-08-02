@@ -2,7 +2,7 @@
   "name": "simple-http-server-chrome",
   "version": "0.1",
   "manifest_version": 2,
-  "description": "A chrome app to produce SimpleHTTPServer",
+  "description": "A chrome app to prepare SimpleHTTPServer",
   "icons": {
     "16": "icon-16.png",
     "128": "icon-128.png"

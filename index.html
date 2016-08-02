@@ -9,10 +9,14 @@
 
 <body>
   <div class="hero-unit">
-    <p> Select the folder which will act as the root folder of your server (The server will autometically start after you select the folder)</p>
+    <p> <b>Select the folder which will act as the root folder of your server (The server will autometically start after you select the folder)</b></p>
     <p>
       <input type="file" webkitdirectory id="directory" /><br />
     </p>
+    <h3>Server Status</h3>
+    <label id="lbl_red" style="color:red"><b>Offline</b></label><label id="lbl_red" style="color:green;display:none"><b>Online</b></label>
+    <h3>Listing to URL:</h3>
+    <label id="lbl_url" style="font-weight:bold"></label>  
   </div>
   <pre id="logger"></pre>
 </body>

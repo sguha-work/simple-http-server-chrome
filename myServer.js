@@ -234,6 +234,7 @@ window.onload = function () {
         write200Response(socketId, file, keepAlive);
 
     };
+
     startServer = (function () {
 
         tcpServer.create({}, function (socketInfo) {
@@ -241,7 +242,7 @@ window.onload = function () {
 
             tcpServer.listen(serverSocketId, hosts, parseInt(port, 10), 50, function (result) {
                 console.log("LISTENING:", result);
-
+                document.getElementById("lbl_url").innerHTML = "<a href='http://"+hosts+":"+port+"'>http://"+hosts+":"+port+"</a>";
                 tcpServer.onAccept.addListener(onAccept);
                 tcpSocket.onReceive.addListener(onReceive);
             });
