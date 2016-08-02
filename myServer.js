@@ -71,6 +71,9 @@ window.onload = function () {
             tcpServer.close(serverSocketId, function () {
                 if (chrome.runtime.lastError) {
                     console.warn("chrome.sockets.tcpServer.close:", chrome.runtime.lastError);
+                } else {
+                    document.getElementById("lbl_red").style.display = "block";
+                    document.getElementById("lbl_green").style.display = "none";
                 }
             });
         }
@@ -243,6 +246,8 @@ window.onload = function () {
             tcpServer.listen(serverSocketId, hosts, parseInt(port, 10), 50, function (result) {
                 console.log("LISTENING:", result);
                 document.getElementById("lbl_url").innerHTML = "<a href='http://"+hosts+":"+port+"'>http://"+hosts+":"+port+"</a>";
+                document.getElementById("lbl_red").style.display = "none";
+                document.getElementById("lbl_green").style.display = "block";
                 tcpServer.onAccept.addListener(onAccept);
                 tcpSocket.onReceive.addListener(onReceive);
             });
